@@ -3,18 +3,16 @@
 // entre 18 y 69 estamos obligados a votor
 // 16 y 17, y mayores de 70 es optativo
 
-let edad = parseInt(prompt('ingresa tu edad'))
+const edad = parseInt(prompt("ingresa tu edad"));
 
-console.log(edad)
+console.log(edad);
 
-if(edad < 16){
-    document.writeln('No puedes votar')
-}else{
-    // && AND
-    // || OR
-    if( edad >= 18 && edad <=69){
-        document.writeln('Debes votar si o si')
-    }else{
-         document.writeln('Es optativo votar')
-    }
+if (edad < 16) {
+  document.writeln("No puedes votar");
+} else if (edad >= 18 && edad <= 69) {
+  // && AND = Y
+  // || OR = O
+  document.writeln("Debes votar si o si");
+} else {
+  document.writeln("Es optativo votar");
 }
