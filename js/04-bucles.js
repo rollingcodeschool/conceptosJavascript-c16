@@ -41,3 +41,4 @@ for(inicializar una variable; condicion logica; actualizar la variable){
 for(let contador =10; contador >= 0; contador--){
     document.writeln(`<p>Cuenta regresiva ${contador}</p>`);
 }
+
