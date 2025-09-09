@@ -6,10 +6,10 @@ const columnas = parseInt(prompt('Ingresa la cantidad de columnas'))
 document.writeln(`<table class="table table-striped-columns"><tbody>`)
 
 for(let indiceFilas=1; indiceFilas <= filas ; indiceFilas++){
-document.writeln(`<tr>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
-        </tr>`)
+document.writeln(`<tr>`)
+    for(let indiceColumnas=1; indiceColumnas <= columnas; indiceColumnas++){
+        document.writeln(`<td>1</td>`)
+    }
+document.writeln(`</tr>`)
 }
 document.writeln(`</tbody></table>`)
