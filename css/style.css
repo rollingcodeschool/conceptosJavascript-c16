@@ -1,3 +1,7 @@
 .text-blue{
     color: #2673bb;
 }
+
+table{
+    border: 1px solid gray;
+}
