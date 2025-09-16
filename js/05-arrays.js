@@ -1,5 +1,13 @@
-// declarar arrays
+const mostrarArrayJuegos = (titulo = 'Lista de juegos 🎮') => {
+  document.writeln(`<h3 class='my-3'>${titulo}</h3>`);
 
+  document.writeln(`<ul class="list-group">`);
+  for (let i = 0; i < juegos.length; i++) {
+    document.writeln(`<li class="list-group-item">${juegos[i]}</li>`);
+  }
+  document.writeln(`</ul>`);
+};
+// declarar arrays
 //array vacio
 const colores = [];
 
@@ -21,105 +29,48 @@ document.writeln(
   `<p>Cuantos elementos tiene el array juegos: ${juegos.length}</p>`
 );
 
-document.writeln(`<h3>Lista de juegos 🎮</h3>`);
-
-document.writeln(`<ul class="list-group">`);
-for (let i = 0; i < juegos.length; i++) {
-  document.writeln(`<li class="list-group-item">${juegos[i]}</li>`);
-}
-document.writeln(`</ul>`);
+mostrarArrayJuegos()
 
 // Agregar elementos en el array
 juegos.unshift("Lol", "half life");
-
-document.writeln(
-  `<h4 class='my-3'>Agregar elementos al inicio del array juegos 🎮 - cantidad de elementos: ${juegos.length}</h4>`
-);
-document.writeln(`<ul class="list-group">`);
-for (let i = 0; i < juegos.length; i++) {
-  document.writeln(`<li class="list-group-item">${juegos[i]}</li>`);
-}
-document.writeln(`</ul>`);
+mostrarArrayJuegos(`Agregar elementos al inicio del array juegos 🎮 - cantidad de elementos: ${juegos.length}`)
 
 juegos.push("valorant");
-document.writeln(
-  `<h4 class='my-3'>Agregar elementos al final del array juegos 🎮 - cantidad de elementos: ${juegos.length}</h4>`
-);
-document.writeln(`<ul class="list-group">`);
-for (let i = 0; i < juegos.length; i++) {
-  document.writeln(`<li class="list-group-item">${juegos[i]}</li>`);
-}
-document.writeln(`</ul>`);
+mostrarArrayJuegos(`Agregar elementos al final del array juegos 🎮 - cantidad de elementos: ${juegos.length}`)
 
 juegos.splice(5, 0, "ciudades");
-document.writeln(
-  `<h4 class='my-3'>Agregar un elemento en el medio del array juegos 🎮 - cantidad de elementos: ${juegos.length}</h4>`
-);
-document.writeln(`<ul class="list-group">`);
-for (let i = 0; i < juegos.length; i++) {
-  document.writeln(`<li class="list-group-item">${juegos[i]}</li>`);
-}
-document.writeln(`</ul>`);
+mostrarArrayJuegos(`Agregar un elemento en el medio del array juegos 🎮 - cantidad de elementos: ${juegos.length}`)
 
 //Modificar elementos de un Array
 juegos[6] = "Terraria";
 // juegos = 'Terraria'  esto no se puede hacer con un array constante
-
-document.writeln(
-  `<h4 class='my-3'>Modificar un elemento del array juegos 🎮 - cantidad de elementos: ${juegos.length}</h4>`
-);
-document.writeln(`<ul class="list-group">`);
-for (let i = 0; i < juegos.length; i++) {
-  document.writeln(`<li class="list-group-item">${juegos[i]}</li>`);
-}
-document.writeln(`</ul>`);
+mostrarArrayJuegos(`Modificar un elemento del array juegos 🎮 - cantidad de elementos: ${juegos.length}`)
 
 // borrar elementos del array
 juegos.shift();
-document.writeln(
-  `<h4 class='my-3'>Borrar el primer elemento del array juegos 🎮 - cantidad de elementos: ${juegos.length}</h4>`
-);
-document.writeln(`<ul class="list-group">`);
-for (let i = 0; i < juegos.length; i++) {
-  document.writeln(`<li class="list-group-item">${juegos[i]}</li>`);
-}
-document.writeln(`</ul>`);
+mostrarArrayJuegos(`Borrar el primer elemento del array juegos 🎮 - cantidad de elementos: ${juegos.length}`)
 
 juegos.pop();
-document.writeln(
-  `<h4 class='my-3'>Borrar el ultimo elemento del array juegos 🎮 - cantidad de elementos: ${juegos.length}</h4>`
-);
-document.writeln(`<ul class="list-group">`);
-for (let i = 0; i < juegos.length; i++) {
-  document.writeln(`<li class="list-group-item">${juegos[i]}</li>`);
-}
-document.writeln(`</ul>`);
+mostrarArrayJuegos(`Borrar el ultimo elemento del array juegos 🎮 - cantidad de elementos: ${juegos.length}`)
 
 juegos.splice(3, 1);
 // juegos.splice(3,2) borra dos elementos desde la posicion 3
 // juegos.splice(3,20) borra todos los elementos desde la posicion 3 hasta la 20
 // juegos.splice(3) borra todos los elementos desde la posicion 3 en adelante
-document.writeln(
-  `<h4 class='my-3'>Borrar elementos del medio del array juegos 🎮 - cantidad de elementos: ${juegos.length}</h4>`
-);
-document.writeln(`<ul class="list-group">`);
-for (let i = 0; i < juegos.length; i++) {
-  document.writeln(`<li class="list-group-item">${juegos[i]}</li>`);
-}
-document.writeln(`</ul>`);
+mostrarArrayJuegos(`Borrar elementos del medio del array juegos 🎮 - cantidad de elementos: ${juegos.length}`)
 
 // pedir al usuario ingresar un juego, agregarlo al final del array, luego preguntar si quiere adicionar otro juego, si es asi volver a repetir el proceso anterior, caso contrario mostrar el array resultante.
 
-do {
-  const nombreJuego = prompt("Ingresa el nombre de un juego:");
-  juegos.push(nombreJuego);
-} while (confirm("¿Quieres agregar otro juego?"));
+// do {
+//   const nombreJuego = prompt("Ingresa el nombre de un juego:");
+//   juegos.push(nombreJuego);
+// } while (confirm("¿Quieres agregar otro juego?"));
 
-document.writeln(
-  `<h4 class='my-3'>Cargar dinamicamente elementos al array 🎮 - cantidad de elementos: ${juegos.length}</h4>`
-);
-document.writeln(`<ul class="list-group">`);
-for (let i = 0; i < juegos.length; i++) {
-  document.writeln(`<li class="list-group-item">${juegos[i]}</li>`);
-}
-document.writeln(`</ul>`);
+// document.writeln(
+//   `<h4 class='my-3'>Cargar dinamicamente elementos al array 🎮 - cantidad de elementos: ${juegos.length}</h4>`
+// );
+// document.writeln(`<ul class="list-group">`);
+// for (let i = 0; i < juegos.length; i++) {
+//   document.writeln(`<li class="list-group-item">${juegos[i]}</li>`);
+// }
+// document.writeln(`</ul>`);
