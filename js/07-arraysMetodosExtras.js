@@ -1,5 +1,10 @@
 //Crear un programa que tenga un array de peliculas. Queremos pedirle al usuario que realice alguna de las siguientes opciones: 1 - encontrar una peli en el array, 2- filtrar peliculas que contengan algun nombre, 3- mostrar todas las peliculas del array.
 
+function mostrarMensaje (mensaje){
+      console.log(mensaje)
+      document.writeln(`<p>${mensaje}</p>`)
+}
+
 const peliculas = [
     "El Señor de los Anillos",
     "Jurassic Park",
@@ -14,15 +19,30 @@ const opcion = parseInt(prompt('Seleccionar una opcion: 1 - encontrar una peli e
 
 switch(opcion){
     case 1:
+        //pedir al usuario la peli que quiere buscar
+        const peliBuscada = prompt('Ingresa la pelicula que quieres buscar')
+        //buscar la pelicula y mostrar por pantalla si la encontre, si no mostrar un mensaje de pelicula no encontrada.
+        const coincidencia = peliculas.find((pelicula)=> pelicula.toLowerCase() === peliBuscada.toLowerCase())
+        
+        console.log(coincidencia)
+        //falsies = false, '', undefined, null
+        if(coincidencia){
+            mostrarMensaje('Pelicula encontrada 🎬 '+peliBuscada )
+        }else{
+            mostrarMensaje('No encontramos la peli que seleccionaste 😌 ')
+        }
         break;
     case 2:
+         const peli = prompt('Ingresa la pelicula que quieres buscar')
+         const peliculasFiltradas = peliculas.filter((pelicula)=> pelicula.toLowerCase() === peliBuscada.toLowerCase())
+         //investiguen el uso de include para buscar una peli que 'incluya el termino jurassic por ejemplo, la idea es mostrar por pantalla todas las pelis que incluyan esa palabra'
+        if(peliculasFiltradas.length !== 0){
+
+        }
         break;
     case 3:
-        console.log('Mostrar todos los elementos del array')
-        document.writeln('<p>Mostrar todos los elementos del array</p>')
-
-        peliculas.forEach((itemPelicula)=> console.log(itemPelicula))
-
+        mostrarMensaje('Mostrar todos los elementos del array')
+        peliculas.forEach((itemPelicula)=> mostrarMensaje(itemPelicula))
         break;
     default:
 
