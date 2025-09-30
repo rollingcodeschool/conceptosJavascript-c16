@@ -17,14 +17,27 @@ class Usuario {
     this.estado = true; //propiedades por defecto
   }
   //diseñar get y set
-  get email(){
+  get email() {
     return this.#email;
   }
 
-  set email(nuevoEmail){
+  set email(nuevoEmail) {
     //si existe el nuevo email
-    if(nuevoEmail){
-        this.#email = nuevoEmail
+    if (nuevoEmail) {
+      this.#email = nuevoEmail;
+    }
+  }
+
+  get getPassword() {
+    return this.#password;
+  }
+
+  set setPassword(nuevoPassword) {
+    // simbolo de estrictamente distinto ! ==
+    // if(nuevoPassword !== "")
+    // if(nuevoPassword) // nuevoPassword no es un valor vacio '', false, null
+    if (nuevoPassword.length > 0) {
+      this.#password = nuevoPassword;
     }
   }
 
@@ -68,3 +81,9 @@ document.writeln(`<p>Email de Marcos:  ${marcos.email}</p>`);
 marcos.email = "marcosmolina@mail.com";
 // document.writeln(`<p>Email de Marcos:  ${marcos.#email}</p>`);
 marcos.mostrarDatos();
+
+document.writeln(`<p>Password de Valentina:  ${valentina.getPassword}</p>`);
+
+valentina.setPassword = prompt('Ingresa un nuevo password')
+
+document.writeln(`<p>Password actualizado de Valentina:  ${valentina.getPassword}</p>`);
